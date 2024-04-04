@@ -6,7 +6,7 @@ import Testimonials from "./Testimonials";
 const HomePage = () => {
   return (
     <>
-      <div className={`flex md:flex-col flex-col px-[1rem]`}>
+      <div className={`flex md:flex-col flex-col p-[1rem]`}>
         <div className="flex flex-col md:px-[33rem]">
           <div className="md:w-[0%] w-[100%] flex">
             <img
@@ -33,38 +33,33 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="flex pt-[2rem] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:flex">
-          {expertise_data.slice(0, 3).map((expert, id) => {
+        <div className="flex pt-[2rem] gap-4 md:flex justify-center">
+          {expertise_data.map((expert, id) => {
             return (
               <div
                 key={expert.id}
-                className="md:w-[256px] md:h-[285px] sm:w-[172px] sm:h-[210px] gap-[3px] md:px-[15rem] rounded-[11px] p-2 relative flex flex-col items-center hover:bg-[#18181B] hover:opacity[50%] transition duration-150 ease-in-out"
+                className="md:h-[285px] h-[350px] gap-3 md:px-8 rounded-[11px] py-2 px-8 relative flex flex-col bg-[#18181B] hover:opacity[50%] transition duration-150 ease-in-out"
               >
-                <div className="w-[72px] h-[98px] md:w-[256px] md:h-[146px]  relative profile-image-2 mb-4">
-                  <img
-                    src={expert.icon}
-                    alt="background"
-                    className="absolute top-0 left-0 w-full h-full object-contain rounded-t-[11px]"
-                  />
+                <div className="w-[280px] h-[140px] md:w-[256px] md:h-[146px] mb-4">
                   <img
                     src={expert.userImg}
                     alt="User"
-                    className="absolute top-0 left-0 w-full h-full object-contain rounded-t-[11px]"
+                    className="absolute bg-image-rays profile-image-1 opacity-85 top-0 md:left-auto left-0 h-full object-contain rounded-t-[11px]"
                   />
                 </div>
 
-                <div className="flex md:w-[212px] md:h-[26px] sm:w-[157px] sm:h-[22px] flex justify-between md:gap-0 gap-[2.2rem]">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[12px] leading-[12px] font-[500] text-white">
+                <div className="flex justify-between md:h-[26px] mt-4 z-30 sm:h-[22px]">
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[16px] leading-[12px] font-[500] text-white">
                       {expert.name}
                     </span>
-                    <span className="text-[8px] leading-[10px] font-[400] text-dimWhite">
+                    <span className="text-[12px] leading-[10px] font-[400] text-dimWhite">
                       {expert.title}
                     </span>
                   </div>
                   <div className="w-[32px] h-[15px] flex">
                     <img
-                      src={expert.ratingIcon}
+                      src={expert.ratingIcon} alt="rating-icon"
                       className="w-[11.5px] h-[11.5px]"
                     />
                     <span className="text-white font-[600] text-[11.5px] leading-[14px]">
@@ -73,48 +68,129 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                <div className="md:w-[171px] md:h-[33px] w-[125px] h-[23px] flex justify-between mr-[1rem] mt-2">
-                  <div className="flex flex-col w-[52px] h-[33px] items-center">
-                    <span className="text-dimWhite font-[400] text-[8.6px] leading-[10px]">
+                <div className="z-30 md:h-[33px] h-[23px] flex justify-between mr-[1rem] mt-2">
+                  <div className="flex flex-col w-[52px] h-[33px] items-center gap-2">
+                    <span className="text-dimWhite font-[400] text-[12px] leading-[10px]">
                       {expert.experience}
                     </span>
-                    <span className="text-lightWhite font-[600] text-[10px] leading-[12px]">
+                    <span className="text-lightWhite font-[600] text-[12px] leading-[12px]">
                       {expert.totalExp}
                     </span>
                   </div>
                   <div className="md:w-[1.4px] md:h-[25px] w-[1px] h-[22px] bg-lightWhite"></div>
                   <div className="flex">
-                    <div className="flex flex-col w-[52px] h-[33px] items-center">
-                      <span className="text-dimWhite font-[400] text-[8.6px] leading-[10px]">
+                    <div className="flex flex-col w-[52px] h-[33px] items-center gap-2">
+                      <span className="text-dimWhite font-[400] text-[12px] leading-[10px]">
                         {expert.followers}
                       </span>
-                      <span className="text-lightWhite font-[600] text-[10px] leading-[12px]">
+                      <span className="text-lightWhite font-[600] text-[12px] leading-[12px]">
                         {expert.totalFollowers}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="w-[140px] h-[26px] flex items-center justify-center rounded-[21.5px] border-[0.67px] border-solid border-[rgba(255,255,255,0.3)] mt-2 md:mt-0">
-                  <div className="flex justify-center items-center gap-2">
+                <div className="h-[40px] z-30 flex items-center justify-center rounded-[21.5px] border-[0.67px] border-solid border-[rgba(255,255,255,0.3)] mt-4 md:mt-0 bg-[#0081F1]">
+                  <button className="flex justify-center items-center gap-2">
                     <img
                       src={expert.telegram}
                       alt="Telegram"
                       className="w-[16px] h-[16px]"
                     />
-                    <button className="text-white font-[400] text-[10px] leading-[19px]">
+                    <div className="text-white font-[400] text-[10px] leading-[19px]">
                       {expert.greet}
-                    </button>
+                    </div>
                     <img
                       src={expert.arrowIcon}
                       alt="arrow"
                       className="w-[11px] h-[11px]"
                     />
-                  </div>
+                  </button>
                 </div>
               </div>
             );
           })}
+        </div>
+        <div className="flex pt-[2rem] gap-4 md:flex justify-center relative pointer-events-none">
+          {expertise_data.map((expert, id) => {
+            return (
+              <div
+                key={expert.id}
+                className="md:h-[285px] opacity-50 h-[350px] gap-3 md:px-8 rounded-[11px] py-2 px-8 relative flex flex-col bg-[#18181B] hover:opacity[50%] transition duration-150 ease-in-out"
+              >
+                <div className="w-[280px] h-[140px] md:w-[256px] md:h-[146px] mb-4">
+                  <img
+                    src={expert.userImg}
+                    alt="User"
+                    className="absolute bg-image-rays profile-image-1 opacity-85 top-0 md:left-auto left-0 h-full object-contain rounded-t-[11px]"
+                  />
+                </div>
+
+                <div className="flex justify-between md:h-[26px] mt-4 z-30 sm:h-[22px]">
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[16px] leading-[12px] font-[500] text-white">
+                      {expert.name}
+                    </span>
+                    <span className="text-[12px] leading-[10px] font-[400] text-dimWhite">
+                      {expert.title}
+                    </span>
+                  </div>
+                  <div className="w-[32px] h-[15px] flex">
+                    <img
+                      src={expert.ratingIcon} alt="rating-icon"
+                      className="w-[11.5px] h-[11.5px]"
+                    />
+                    <span className="text-white font-[600] text-[11.5px] leading-[14px]">
+                      {expert.rating}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="z-30 md:h-[33px] h-[23px] flex justify-between mr-[1rem] mt-2">
+                  <div className="flex flex-col w-[52px] h-[33px] items-center gap-2">
+                    <span className="text-dimWhite font-[400] text-[12px] leading-[10px]">
+                      {expert.experience}
+                    </span>
+                    <span className="text-lightWhite font-[600] text-[12px] leading-[12px]">
+                      {expert.totalExp}
+                    </span>
+                  </div>
+                  <div className="md:w-[1.4px] md:h-[25px] w-[1px] h-[22px] bg-lightWhite"></div>
+                  <div className="flex">
+                    <div className="flex flex-col w-[52px] h-[33px] items-center gap-2">
+                      <span className="text-dimWhite font-[400] text-[12px] leading-[10px]">
+                        {expert.followers}
+                      </span>
+                      <span className="text-lightWhite font-[600] text-[12px] leading-[12px]">
+                        {expert.totalFollowers}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="h-[40px] z-30 flex items-center justify-center rounded-[21.5px] border-[0.67px] border-solid border-[rgba(255,255,255,0.3)] mt-4 md:mt-0 bg-[#0081F1]">
+                  <button className="flex justify-center items-center gap-2">
+                    <img
+                      src={expert.telegram}
+                      alt="Telegram"
+                      className="w-[16px] h-[16px]"
+                    />
+                    <div className="text-white font-[400] text-[10px] leading-[19px]">
+                      {expert.greet}
+                    </div>
+                    <img
+                      src={expert.arrowIcon}
+                      alt="arrow"
+                      className="w-[11px] h-[11px]"
+                    />
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+          <div className="text-white absolute text-5xl top-1/2">
+            Coming Soon...
+          </div>
         </div>
 
         <div className="flex flex-col items-center py-8">
@@ -143,7 +219,7 @@ const HomePage = () => {
             <div
               key={stock.id}
               style={{ height: stock.height }}
-              className="flex flex-col p-2 gap-[1rem] items-center md:w-[337px] md:min-h-[80%] w-[335px] rounded-[11px] hover:bg-[#18181B] hover:opacity[50%] transition duration-150 ease-in-out"
+              className="flex flex-col p-2 gap-[1rem] items-center md:w-[337px] md:min-h-[80%] w-[335px] rounded-[11px] hover:bg-[#18181B] hover:opacity-[70%] transition duration-150 ease-in-out"
             >
               <img
                 src={stock.img}
